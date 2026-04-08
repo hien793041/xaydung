@@ -51,7 +51,7 @@ export const products: Product[] = [
     categoryId: 'go',
     description: 'Đà gỗ mạnh mẽ và linh hoạt để hỗ trợ cấu trúc.',
     features: ['Độ bền cao', 'Bền vững', 'Dễ lắp đặt'],
-    image: '/images/dam-go.jpg'
+    image: 'https://images.unsplash.com/photo-1516156008625-3a9d6067fab5?w=600&h=400&fit=crop'
   },
   {
     id: 'tam-thep',
@@ -59,7 +59,7 @@ export const products: Product[] = [
     categoryId: 'thep',
     description: 'Tấm thép dày cho ứng dụng nặng.',
     features: ['Chống gỉ sét', 'Độ bền kéo cao', 'Linh hoạt'],
-    image: '/images/tam-thep.jpg'
+    image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&h=400&fit=crop'
   },
   {
     id: 'gach-betong',
@@ -67,7 +67,7 @@ export const products: Product[] = [
     categoryId: 'betong',
     description: 'Gạch bê tông tiêu chuẩn cho tường và móng.',
     features: ['Chống thời tiết', 'Hiệu quả về chi phí', 'Cách nhiệt'],
-    image: '/images/gach-betong.jpg'
+    image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&h=400&fit=crop'
   },
   {
     id: 'bo-vit',
@@ -75,7 +75,7 @@ export const products: Product[] = [
     categoryId: 'bulong',
     description: 'Bộ vít đa dạng cho các nhu cầu gắn kết.',
     features: ['Chống gỉ', 'Kích thước đa dạng', 'Chất lượng cao'],
-    image: '/images/bo-vit.jpg'
+    image: 'https://images.unsplash.com/photo-1582017159150-e129d07cdfdf?w=600&h=400&fit=crop'
   }
 ];
 
@@ -84,14 +84,14 @@ export const projects: Project[] = [
     id: 'duan1',
     name: 'Tòa nhà dân dụng A',
     description: 'Cung cấp gỗ và thép cho khu phức hợp dân dụng hiện đại.',
-    image: '/images/duan1.jpg',
+    image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&h=400&fit=crop',
     materials: ['Đà gỗ', 'Tấm thép', 'Gạch bê tông']
   },
   {
     id: 'duan2',
     name: 'Tòa tháp thương mại B',
     description: 'Cung cấp bu lông và bê tông cho tòa nhà cao tầng.',
-    image: '/images/duan2.jpg',
+    image: 'https://images.unsplash.com/photo-1486738550801-6c0fa4ae96d1?w=600&h=400&fit=crop',
     materials: ['Gạch bê tông', 'Bộ vít', 'Tấm thép']
   }
 ];

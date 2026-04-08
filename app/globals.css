@@ -14,44 +14,105 @@ html {
 
 body {
   margin: 0;
-  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Oxygen',
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f8f9fa;
-  color: #333;
+  background-color: #ffffff;
+  color: #1f2937;
   line-height: 1.6;
+  font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #0f172a;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: 'Fira Code', 'Monaco', 'Consolas', 'Courier New', monospace;
+  font-size: 0.875rem;
 }
 
-/* Smooth transitions */
-a {
-  transition: all 0.3s ease;
+/* Professional transitions */
+a, button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-button {
-  transition: all 0.3s ease;
-}
-
-/* Custom scrollbar */
+/* Construction-themed scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #f1f5f9;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #0066cc;
+  background: linear-gradient(135deg, #1e40af, #374151);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #003d99;
+  background: linear-gradient(135deg, #1d4ed8, #4b5563);
+}
+
+/* Construction company specific styles */
+.construction-card {
+  @apply bg-white rounded-lg shadow-construction border border-gray-100 hover:shadow-construction-lg transition-all duration-300;
+}
+
+.construction-btn {
+  @apply bg-primary hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300;
+}
+
+.construction-btn-secondary {
+  @apply bg-accent hover:bg-amber-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300;
+}
+
+.trust-badge {
+  @apply bg-trust-green text-white px-3 py-1 rounded-full text-sm font-medium;
+}
+
+.industrial-bg {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+/* Focus states for accessibility */
+button:focus, a:focus {
+  outline: 2px solid #1e40af;
+  outline-offset: 2px;
+}
+
+/* Loading animation for construction theme */
+@keyframes construction-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.construction-loading {
+  animation: construction-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
