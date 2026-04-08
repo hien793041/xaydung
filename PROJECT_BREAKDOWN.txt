@@ -1,0 +1,272 @@
+========================================
+CONSTRUCTION MATERIALS WEBSITE
+UI-ONLY BREAKDOWN SPEC
+LANGUAGE: VIETNAMESE
+TARGET USERS: NGUOI VIET NAM
+========================================
+
+
+1. PROJECT OVERVIEW
+-----------------
+Website dành cho công ty xây dựng, trọng tâm chính là:
+- Bán vật liệu xây dựng
+- Nhận yêu cầu báo giá (bán sỉ, bán cho công trình)
+
+PHẠM VI HIỆN TẠI:
+- Chỉ xây dựng UI (Frontend)
+- KHÔNG sử dụng API
+- KHÔNG sử dụng Database
+- Sử dụng mock data (file JS/TS nội bộ)
+
+ĐỐI TƯỢNG NGƯỜI DÙNG:
+- Chủ nhà
+- Thầu xây dựng nhỏ
+- Thợ xây
+- Người làm công trình (chủ yếu dùng điện thoại)
+
+NGÔN NGỮ:
+- TOÀN BỘ WEBSITE PHẢI BẰNG TIẾNG VIỆT
+- Không sử dụng tiếng Anh trong nội dung hiển thị
+
+
+2. TECH STACK (GIẢ ĐỊNH)
+-----------------------
+- Framework: Next.js (App Router)
+- UI: React
+- CSS: Tailwind CSS
+- Routing: Next.js built-in
+- Data source: Local mock data (.ts hoặc .js)
+
+
+3. DESIGN PRINCIPLES
+-------------------
+- Giao diện rõ ràng, dễ đọc
+- Không màu mè
+- Ưu tiên mobile first
+- Nút bấm lớn, dễ thao tác
+- Tập trung vào:
+  + Sản phẩm
+  + Báo giá
+  + Liên hệ nhanh
+
+BẢNG MÀU GỢI Ý:
+- Màu chính: Xanh đậm / Xám đậm
+- Màu nhấn: Cam hoặc Vàng
+- Nền: Trắng / Xám nhạt
+
+
+4. SITE MAP
+-----------
+/
+|-- Trang chủ
+|-- Sản phẩm
+|   |-- Danh sách sản phẩm
+|   |-- Chi tiết sản phẩm
+|-- Yêu cầu báo giá
+|-- Công trình đã cung cấp
+|-- Giới thiệu
+|-- Liên hệ
+
+
+5. GLOBAL LAYOUT
+----------------
+Mọi trang đều sử dụng layout chung:
+
+- Header
+- Main Content
+- Footer
+
+
+6. HEADER COMPONENT
+-------------------
+Chức năng:
+- Hiển thị logo công ty
+- Điều hướng chính
+- Nút hotline nổi bật
+
+Thành phần:
+- Logo (trái)
+- Menu:
+  Trang chủ
+  Sản phẩm
+  Báo giá
+  Công trình
+  Liên hệ
+- Hotline button (click để gọi)
+
+Yêu cầu:
+- Sticky header
+- Hiển thị tốt trên mobile
+
+
+7. FOOTER COMPONENT
+-------------------
+Bao gồm:
+- Thông tin công ty
+- Danh mục sản phẩm
+- Thông tin liên hệ
+- Copyright
+
+
+8. HOME PAGE (TRANG CHỦ)
+-----------------------
+
+Mục tiêu:
+- Người dùng hiểu ngay công ty bán gì
+- Điều hướng nhanh sang sản phẩm và báo giá
+
+Cấu trúc trang:
+
+8.1 HERO SECTION
+- Tiêu đề lớn:
+  "Chuyên cung cấp vật liệu xây dựng cho nhà dân & công trình"
+- Mô tả ngắn:
+  "Giá tốt – Giao hàng nhanh – Đúng tiêu chuẩn"
+- Nút:
+  "Xem sản phẩm"
+  "Yêu cầu báo giá"
+
+8.2 DANH MỤC SẢN PHẨM
+- Hiển thị dạng grid
+- Mỗi danh mục là 1 card
+- Click vào dẫn đến trang sản phẩm
+
+Danh mục ví dụ:
+- Sắt thép xây dựng
+- Xi măng
+- Cát – đá
+- Gạch xây dựng
+- Vật liệu hoàn thiện
+
+8.3 LÝ DO CHỌN CHÚNG TÔI
+- Kho hàng lớn
+- Giao nhanh
+- Giá tốt cho công trình
+- Hỗ trợ kỹ thuật
+
+8.4 CALL TO ACTION
+- Banner lớn
+- Nội dung:
+  "Cần báo giá vật liệu xây dựng?"
+- Nút:
+  "Nhận báo giá ngay"
+
+
+9. PRODUCTS PAGE (TRANG SẢN PHẨM)
+--------------------------------
+
+Mục tiêu:
+- Dễ tìm sản phẩm
+- Không cần giá cố định
+
+Layout:
+- Sidebar: danh mục sản phẩm
+- Main: grid sản phẩm
+
+PRODUCT CARD:
+- Hình ảnh sản phẩm
+- Tên sản phẩm
+- Thông số ngắn (nếu có)
+- Nút:
+  "Liên hệ báo giá"
+  "Xem chi tiết"
+
+
+10. PRODUCT DETAIL PAGE
+-----------------------
+Mục tiêu:
+- Cung cấp đủ thông tin để người mua tin tưởng
+
+Nội dung:
+- Tên sản phẩm
+- Hình ảnh (1 hoặc nhiều ảnh)
+- Thông số kỹ thuật
+- Mô tả công dụng
+- Nút liên hệ / báo giá
+
+
+11. QUOTATION REQUEST PAGE (TRANG BÁO GIÁ)
+-----------------------------------------
+ĐÂY LÀ TRANG QUAN TRỌNG NHẤT
+
+Form yêu cầu báo giá (UI only):
+
+Trường dữ liệu:
+- Họ và tên
+- Số điện thoại (bắt buộc)
+- Sản phẩm cần mua
+- Số lượng
+- Địa điểm giao hàng
+- Ghi chú thêm
+
+Nút gửi:
+"Gửi yêu cầu – Chúng tôi sẽ gọi lại"
+
+KHÔNG xử lý submit
+KHÔNG validate nâng cao
+Chỉ cần UI đầy đủ
+
+
+12. PROJECTS PAGE (CÔNG TRÌNH ĐÃ CUNG CẤP)
+-----------------------------------------
+Mục tiêu:
+- Tạo uy tín
+
+Hiển thị dạng card:
+- Hình ảnh công trình
+- Tên công trình
+- Vật liệu đã cung cấp
+- Khu vực
+
+
+13. ABOUT PAGE (GIỚI THIỆU)
+--------------------------
+Nội dung:
+- Giới thiệu công ty
+- Số năm kinh nghiệm
+- Hình ảnh kho bãi
+- Hình ảnh xe vận chuyển
+- Cam kết chất lượng
+
+
+14. CONTACT PAGE (LIÊN HỆ)
+-------------------------
+Nội dung:
+- Hotline (click to call)
+- Zalo
+- Địa chỉ công ty
+- Google Map (iframe tĩnh)
+- Form liên hệ đơn giản (UI only)
+
+
+15. MOCK DATA STRUCTURE
+-----------------------
+data/
+- categories.ts
+- products.ts
+- projects.ts
+- company.ts
+
+Mock data phải là tiếng Việt
+Tên sản phẩm, mô tả, danh mục đều bằng tiếng Việt
+
+
+16. FOLDER STRUCTURE GỢI Ý
+-------------------------
+src/
+- app/
+- components/
+- data/
+- styles/
+
+
+17. IMPORTANT NOTES
+------------------
+- Toàn bộ nội dung website là TIẾNG VIỆT
+- Website dành cho người Việt Nam
+- Không sử dụng chữ tiếng Anh trên giao diện
+- Ưu tiên trải nghiệm trên điện thoại
+- Không triển khai backend ở giai đoạn này
+
+END OF FILE
+========================================
